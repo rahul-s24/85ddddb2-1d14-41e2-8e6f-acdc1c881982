@@ -1,4 +1,5 @@
 import TicketCard from "./TicketCard";
+import { Button } from "@/components/ui/button";
 
 const FeaturedTickets = () => {
   const featuredTickets = [
@@ -77,14 +78,23 @@ const FeaturedTickets = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section className="py-24 bg-gradient-to-b from-background via-muted/10 to-background relative">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-subtle opacity-50" />
+      
+      <div className="container mx-auto px-4 relative">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-light mb-4 text-foreground">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-card border border-border rounded-full mb-6">
+            <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+            <span className="text-sm text-muted-foreground">Live Marketplace</span>
+          </div>
+          
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
             Available Now
           </h2>
-          <p className="text-lg text-muted-foreground max-w-xl mx-auto font-light">
-            Premium tickets from verified sellers
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Premium tickets from verified sellers. 
+            <span className="text-foreground">Prices update in real-time.</span>
           </p>
         </div>
         
@@ -95,9 +105,11 @@ const FeaturedTickets = () => {
         </div>
         
         <div className="text-center mt-16">
-          <button className="text-muted-foreground hover:text-foreground font-light transition-colors">
-            View All Tickets
-          </button>
+          <Button variant="outline" size="lg" className="group border-primary/20 hover:border-primary/40 hover:bg-primary/5">
+            <span className="bg-gradient-primary bg-clip-text text-transparent group-hover:text-foreground transition-all">
+              View All Tickets
+            </span>
+          </Button>
         </div>
       </div>
     </section>

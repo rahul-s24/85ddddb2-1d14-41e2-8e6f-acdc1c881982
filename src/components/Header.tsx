@@ -1,40 +1,46 @@
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
+import { Menu, Sparkles } from "lucide-react";
 import { useState } from "react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center">
-            <span className="text-xl font-light text-foreground">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center shadow-glow">
+              <Sparkles className="h-5 w-5 text-white" />
+            </div>
+            <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
               TicketVault
             </span>
           </div>
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#" className="text-muted-foreground hover:text-foreground transition-colors font-light">
+            <a href="#" className="text-muted-foreground hover:text-primary transition-colors font-medium relative group">
               Browse
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300"></span>
             </a>
-            <a href="#" className="text-muted-foreground hover:text-foreground transition-colors font-light">
+            <a href="#" className="text-muted-foreground hover:text-primary transition-colors font-medium relative group">
               Sell
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300"></span>
             </a>
-            <a href="#" className="text-muted-foreground hover:text-foreground transition-colors font-light">
+            <a href="#" className="text-muted-foreground hover:text-primary transition-colors font-medium relative group">
               Support
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300"></span>
             </a>
           </nav>
           
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" size="sm" className="font-light">
+            <Button variant="ghost" size="sm" className="hover:bg-primary/10">
               Sign In
             </Button>
-            <Button variant="default" size="sm" className="font-light">
+            <Button variant="default" size="sm" className="bg-gradient-primary hover:opacity-90 transition-opacity shadow-glow">
               Sign Up
             </Button>
           </div>
