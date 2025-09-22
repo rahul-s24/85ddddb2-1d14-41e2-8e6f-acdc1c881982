@@ -5,72 +5,52 @@ const HowItWorks = () => {
   const steps = [
     {
       icon: Search,
-      title: "Find Your Show",
-      description: "Search for sold-out concerts and events. Filter by artist, venue, date, or price range.",
-      color: "text-electric"
+      title: "Search",
+      description: "Find tickets for sold-out shows",
     },
     {
       icon: CreditCard,
-      title: "Secure Payment",
-      description: "Complete your purchase with our secure payment system. Your money is protected until delivery.",
-      color: "text-green-500"
+      title: "Buy",
+      description: "Secure payment with buyer protection",
     },
     {
       icon: Ticket,
-      title: "Get Your Tickets",
-      description: "Receive verified tickets instantly via mobile transfer or email. Ready to use at the venue.",
-      color: "text-gold"
+      title: "Receive",
+      description: "Get verified tickets instantly",
     },
     {
       icon: Shield,
-      title: "100% Guaranteed",
-      description: "Every ticket is verified authentic. If there's any issue, we'll refund you or find replacements.",
-      color: "text-primary"
+      title: "Guaranteed",
+      description: "100% authentic or full refund",
     }
   ];
 
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-20 bg-muted/20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">How It Works</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Getting into your dream show has never been easier or more secure
+          <h2 className="text-3xl font-light mb-4">How It Works</h2>
+          <p className="text-lg text-muted-foreground max-w-lg mx-auto font-light">
+            Simple, secure, guaranteed
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {steps.map((step, index) => {
             const IconComponent = step.icon;
             return (
-              <Card key={index} className="p-8 text-center border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg">
-                <div className="mb-6">
-                  <div className="w-16 h-16 mx-auto bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl flex items-center justify-center mb-4">
-                    <IconComponent className={`h-8 w-8 ${step.color}`} />
-                  </div>
-                  <div className="w-8 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
+              <div key={index} className="text-center">
+                <div className="w-12 h-12 mx-auto bg-card border border-border rounded-lg flex items-center justify-center mb-4">
+                  <IconComponent className="h-6 w-6 text-foreground" />
                 </div>
                 
-                <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <h3 className="text-lg font-medium mb-2">{step.title}</h3>
+                <p className="text-muted-foreground text-sm font-light">
                   {step.description}
                 </p>
-                
-                {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-px bg-gradient-to-r from-primary/50 to-transparent transform -translate-y-1/2" />
-                )}
-              </Card>
+              </div>
             );
           })}
-        </div>
-        
-        <div className="text-center mt-16">
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 rounded-full border border-primary/20">
-            <Shield className="h-5 w-5 text-primary" />
-            <span className="text-primary font-semibold">
-              Trusted by over 50,000 music fans worldwide
-            </span>
-          </div>
         </div>
       </div>
     </section>

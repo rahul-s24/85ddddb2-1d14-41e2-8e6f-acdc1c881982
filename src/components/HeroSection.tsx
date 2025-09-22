@@ -1,63 +1,50 @@
 import { Button } from "@/components/ui/button";
-import { Search, Shield, Clock } from "lucide-react";
-import heroImage from "@/assets/concert-hero.jpg";
+import { Search } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
-      </div>
-      
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center text-white">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-primary-glow to-accent bg-clip-text text-transparent">
-            Get Into Any Show
+    <section className="min-h-screen flex items-center justify-center bg-background">
+      <div className="container mx-auto px-4 text-center">
+        <div className="max-w-3xl mx-auto">
+          <h1 className="text-6xl md:text-8xl font-light mb-8 text-foreground tracking-tight">
+            TicketVault
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto">
-            Buy and sell sold-out concert tickets with complete security. Your dream show is just one click away.
+          <p className="text-xl md:text-2xl mb-12 text-muted-foreground font-light max-w-2xl mx-auto">
+            Secure marketplace for sold-out concert tickets
           </p>
           
           {/* Search Bar */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-2 max-w-2xl mx-auto mb-8 border border-white/20">
-            <div className="flex items-center gap-4">
-              <Search className="text-white/70 ml-4 h-5 w-5" />
+          <div className="bg-card border border-border rounded-lg p-1 max-w-xl mx-auto mb-16">
+            <div className="flex items-center gap-3">
+              <Search className="text-muted-foreground ml-4 h-5 w-5" />
               <input 
                 type="text" 
-                placeholder="Search for artists, venues, or events..."
-                className="flex-1 bg-transparent text-white placeholder-white/60 border-none outline-none py-3"
+                placeholder="Search artists or events"
+                className="flex-1 bg-transparent text-foreground placeholder-muted-foreground border-none outline-none py-4 text-lg"
               />
-              <Button variant="default" size="lg" className="rounded-xl">
+              <Button variant="default" size="lg" className="m-1">
                 Search
               </Button>
             </div>
           </div>
           
-          {/* Trust Indicators */}
-          <div className="flex flex-wrap justify-center gap-8 text-sm text-gray-300">
-            <div className="flex items-center gap-2">
-              <Shield className="h-4 w-4 text-green-400" />
-              <span>100% Secure Payments</span>
+          {/* Stats */}
+          <div className="flex justify-center gap-12 text-sm text-muted-foreground">
+            <div className="text-center">
+              <div className="text-2xl font-light text-foreground mb-1">50K+</div>
+              <div>Active Users</div>
             </div>
-            <div className="flex items-center gap-2">
-              <Clock className="h-4 w-4 text-blue-400" />
-              <span>Instant Delivery</span>
+            <div className="text-center">
+              <div className="text-2xl font-light text-foreground mb-1">100%</div>
+              <div>Secure</div>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-gold">★★★★★</span>
-              <span>Trusted by 50K+ fans</span>
+            <div className="text-center">
+              <div className="text-2xl font-light text-foreground mb-1">24/7</div>
+              <div>Support</div>
             </div>
           </div>
         </div>
       </div>
-      
-      {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 };

@@ -77,14 +77,14 @@ const FeaturedTickets = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-muted/20">
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Hot Tickets Right Now
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-light mb-4 text-foreground">
+            Available Now
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Don't miss out on these in-demand shows. Prices are moving fast!
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto font-light">
+            Premium tickets from verified sellers
           </p>
         </div>
         
@@ -94,9 +94,9 @@ const FeaturedTickets = () => {
           ))}
         </div>
         
-        <div className="text-center mt-12">
-          <button className="text-primary hover:text-primary/80 font-semibold text-lg transition-colors">
-            View All Available Tickets →
+        <div className="text-center mt-16">
+          <button className="text-muted-foreground hover:text-foreground font-light transition-colors">
+            View All Tickets
           </button>
         </div>
       </div>
