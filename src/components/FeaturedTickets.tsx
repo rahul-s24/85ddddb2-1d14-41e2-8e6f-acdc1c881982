@@ -94,7 +94,7 @@ const FeaturedTickets = () => {
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Premium tickets from verified sellers. 
-            <span className="text-foreground">Prices update in real-time.</span>
+            <span className="text-foreground"> Prices update in real-time.</span>
           </p>
         </div>
         

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, Sparkles } from "lucide-react";
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom"; // ⬅️ import Link
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,61 +19,88 @@ const Header = () => {
               TicketVault
             </span>
           </div>
-          
+
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors font-medium relative group">
+            <Link
+              to="/"
+              className="text-muted-foreground hover:text-primary transition-colors font-medium relative group"
+            >
               Browse
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300"></span>
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors font-medium relative group">
+            </Link>
+            <Link
+              to="/sell"
+              className="text-muted-foreground hover:text-primary transition-colors font-medium relative group"
+            >
               Sell
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300"></span>
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors font-medium relative group">
+            </Link>
+            <a
+              href="#"
+              className="text-muted-foreground hover:text-primary transition-colors font-medium relative group"
+            >
               Support
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300"></span>
             </a>
           </nav>
-          
+
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" size="sm" className="hover:bg-primary/10">
-              Sign In
-            </Button>
-            <Button variant="default" size="sm" className="bg-gradient-primary hover:opacity-90 transition-opacity shadow-glow">
-              Sign Up
-            </Button>
+            {/* ⬇️ wrap Button in Link */}
+            <Link to="/login">
+              <Button variant="ghost" size="sm" className="hover:bg-primary/10">
+                Log In
+              </Button>
+            </Link>
+            <Link to="/Signup">
+              <Button variant="default"
+              size="sm"
+              className="bg-gradient-primary hover:opacity-90 transition-opacity shadow-glow">
+                Sign Up
+              </Button>
+            </Link>
           </div>
-          
+
           {/* Mobile Menu Button */}
-          <Button 
-            variant="ghost" 
-            size="sm" 
+          <Button
+            variant="ghost"
+            size="sm"
             className="md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <Menu className="h-5 w-5" />
           </Button>
         </div>
-        
+
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden border-t border-border py-4">
             <nav className="flex flex-col gap-4">
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors font-light">
+              <Link
+                to="/"
+                className="text-muted-foreground hover:text-foreground transition-colors font-light"
+              >
                 Browse
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors font-light">
+              </Link>
+              <Link
+                to="/sell"
+                className="text-muted-foreground hover:text-foreground transition-colors font-light"
+              >
                 Sell
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors font-light">
+              </Link>
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-foreground transition-colors font-light"
+              >
                 Support
               </a>
               <div className="flex flex-col gap-2 pt-4 border-t border-border">
-                <Button variant="ghost" size="sm" className="justify-start font-light">
-                  Sign In
-                </Button>
+                <Link to="/login">
+                  <Button variant="ghost" size="sm" className="justify-start font-light">
+                    Sign In
+                  </Button>
+                </Link>
                 <Button variant="default" size="sm" className="font-light">
                   Sign Up
                 </Button>
